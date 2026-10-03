@@ -424,5 +424,18 @@ If SLO violations do not lead to decisions or corrective actions, the SLO become
 - SLIs should measure outcomes that matter to users.
 - Error budgets should influence engineering and release decisions.
 - SLOs and their implementations should be reviewed and refined using production feedback.
+- Divide the system into request-driven, pipeline, and storage components before selecting SLIs. 
+- An SLI specification defines **what** should be measured. 
+- An SLI implementation defines **how** the measurement is collected. 
+- Measurement sources may include application logs, load balancers, black-box probes, and client-side instrumentation. 
+- Rolling windows are closely connected to current user experience. 
+- Calendar windows are useful for fixed business reporting and planning. 
+- Short windows support quick operational decisions. 
+- Long windows support strategic reliability analysis. 
+- Product, Development, and SRE stakeholders must agree on the SLO. 
+- An error budget policy defines the response to excessive unreliability. 
+- Common responses include prioritizing reliability bugs, pausing feature development, and applying a production freeze. 
+- SLO documentation should include the service description, target, SLI implementation, error budget calculation, rationale, and review schedule. 
+- An SLO is valuable only when it influences real engineering decisions.
 
 > Reliability is not about eliminating every failure. It is about defining acceptable reliability and making informed decisions within that boundary.
