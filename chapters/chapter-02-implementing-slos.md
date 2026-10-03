@@ -268,6 +268,153 @@ Prefer a simple and useful indicator over a complicated measurement that is diff
 
 ---
 
+### Common Actions 
+
+#### Prioritize Reliability Bugs 
+
+Engineering teams may give reliability-related problems priority over other planned work. 
+
+Examples include: 
+
+- Fixing recurring failures 
+- Addressing performance bottlenecks 
+- Improving monitoring 
+- Removing dangerous manual processes 
+- Strengthening automated recovery 
+
+#### Pause Feature Development 
+
+Feature development may be temporarily reduced or paused so engineering capacity can be redirected toward service reliability. 
+
+The goal is not to punish the development team. The goal is to restore the service to an acceptable reliability level. 
+
+#### Apply a Production Freeze 
+
+A temporary production freeze may be introduced to reduce additional risk. 
+
+During the freeze, only essential or reliability-related changes should be considered for deployment. 
+
+A production freeze helps prevent additional instability while teams investigate and resolve existing reliability problems. 
+
+--- 
+
+## Documenting the SLO and Error Budget Policy 
+
+SLO documentation should provide enough information for stakeholders to understand: 
+
+- What is being measured 
+- Why it is being measured 
+- How it is being measured 
+- What reliability target has been selected 
+- What happens when the error budget is exhausted 
+
+The documentation should include the following sections. 
+
+### 1. Service Description 
+
+Describe: 
+
+- The purpose of the service 
+- The users of the service 
+- The important user journeys 
+- The service’s major dependencies 
+
+### 2. SLO Objectives 
+
+Record the selected reliability target and the expected user outcome. 
+
+Example: 
+
+```text 
+99.9% of valid user requests should complete successfully 
+over the selected measurement window. 
+``` 
+
+### 3. SLI Implementation 
+
+Document: 
+
+- The SLI specification 
+- The measurement formula 
+- The data source 
+- Any filters or exclusions 
+- The selected measurement window 
+
+Example: 
+
+```text 
+SLI = Successful Valid Requests / Total Valid Requests 
+``` 
+
+### 4. Error Budget Calculation 
+
+Document how the error budget is calculated. 
+
+```text 
+Error Budget = 100% - SLO 
+``` 
+
+Example: 
+
+```text 
+SLO = 99.9% 
+Error Budget = 0.1% 
+``` 
+
+For 3,000,000 valid requests: 
+
+```text 
+Allowed Failed Requests = 3,000,000 × 0.001 
+ = 3,000 
+``` 
+
+### 5. Rationale Behind the Target 
+
+Explain why the selected target is appropriate. 
+
+The rationale may consider: 
+
+- User expectations 
+- Business impact 
+- Technical limitations 
+- Operational effort 
+- Cost 
+- Feature velocity 
+- Historical service behaviour 
+
+### 6. Review Schedule 
+
+Define how regularly the SLO will be reviewed. 
+
+During a review, teams should check: 
+
+- Whether the SLI still represents the user experience 
+- Whether the target remains realistic 
+- Whether the measurement source is accurate 
+- Whether the error budget policy is effective 
+- Whether the SLO influences engineering decisions 
+
+--- 
+
+## Making SLOs Actionable 
+
+An SLO provides value only when stakeholders agree to enforce its corresponding error budget policy. 
+
+An effective SLO should influence: 
+
+- Engineering priorities 
+- Release decisions 
+- Reliability improvements 
+- Incident follow-up 
+- Operational planning 
+- Risk management 
+
+If SLO violations do not lead to decisions or corrective actions, the SLO becomes only a reporting number. 
+
+> A useful SLO connects user experience, technical measurements, and engineering decisions. 
+
+--- 
+
 ## Key Takeaways
 
 - An **SLI** measures service performance.
