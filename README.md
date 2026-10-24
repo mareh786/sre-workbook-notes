@@ -48,8 +48,8 @@ The notes are written in my own words wherever possible, with emphasis on **unde
 | Chapter | Topic | Status |
 |---|---|---|
 | Chapter 1 | How SRE Relates to DevOps | ✅ Completed |
-| Chapter 2 | Introduction to SLOs | 🔄 In Progress |
-| Chapter 3 | | ⏳ |
+| Chapter 2 | Introduction to SLOs | ✅ Completed |
+| Chapter 3 | | |
 | Chapter 4 | | ⏳ |
 | Chapter 5 | | ⏳ |
 | Chapter 6 | | ⏳ |
